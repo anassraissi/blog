@@ -5,7 +5,7 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">create a post</li>
       <li class="list-group-item">
-          <form action="/post/store" method="Post">
+          <form action="{{route('post.store')}}" method="Post">
           @csrf
           <div class="form-group">
               <label for="title">Title</label>
