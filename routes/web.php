@@ -31,6 +31,18 @@ Route::group(['prefix'=>'admin' , 'middleware' =>'auth'] , function(){
         'uses' => 'PostController@store',
         'as' => 'post.store'
     ]);
+    Route::Post('/category/store',[
+        'uses' => 'CategoryController@store',
+        'as' => 'Category.store'
+    ]);
+    Route::get('/category/create',[
+        'uses' => 'CategoryController@create',
+        'as' => 'Category.create'
+    ]);
+    Route::get('/category/index',[
+        'uses' => 'CategoryController@index',
+        'as' => 'Category.index'
+    ]);
     Route::get('/home', 'HomeController@index')->name('home');
 
 });

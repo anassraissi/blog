@@ -86,6 +86,14 @@
                       <li class="list-group-item">
                        <a href="{{route('post.create')}}">create new Post</a> 
                       </li>
+                      </li>
+                      <li class="list-group-item">
+                       <a href="{{route('Category.create')}}">create a Category</a> 
+                      </li>
+                      </li>
+                      <li class="list-group-item">
+                       <a href="{{route('Category.index')}}">Categories</a> 
+                      </li>
                   </ul>
             </div>
             @endif
