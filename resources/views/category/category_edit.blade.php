@@ -4,17 +4,18 @@
       <br>
 <div class="card">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">create a Category</li>
+      <li class="list-group-item">Update {{$category->name}} Category</li>
       <li class="list-group-item">
-          <form action="{{route('Category.store')}}" method="Post">
+          <form action="{{route('Category.update',$category->id)}}" method="Post">
           @csrf
+        
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="textbox" class="text" name="name">
+            <input type="textbox" class="text" value="{{$category->name}}" name="name">
         </div>
         <div class="form-group">
             <div class="text-center">
-                <button type="submit" class="btn btn-success">Store</button>
+                <button type="submit" class="btn btn-success">Update</button>
             </div>
         </div>
         </form>

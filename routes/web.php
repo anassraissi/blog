@@ -43,6 +43,18 @@ Route::group(['prefix'=>'admin' , 'middleware' =>'auth'] , function(){
         'uses' => 'CategoryController@index',
         'as' => 'Category.index'
     ]);
+    Route::get('/category/edit/{id}',[
+        'uses' => 'CategoryController@edit',
+        'as' => 'Category.edit'
+    ]);
+    Route::post('/category/update/{id}',[
+        'uses' => 'CategoryController@update',
+        'as' => 'Category.update'
+    ]);
+    Route::get('/category/destroy/{id}',[
+        'uses' => 'CategoryController@destroy',
+        'as' => 'Category.destroy'
+    ]);
     Route::get('/home', 'HomeController@index')->name('home');
 
 });

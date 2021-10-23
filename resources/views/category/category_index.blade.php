@@ -20,6 +20,13 @@
               <td>
               {{$category->name}}
               </td>
+              <td>
+              <a href="{{route('Category.edit',$category->id)}}"  class="btn btn-xs btn-info"> Edit</a>
+              </td>
+              <td>
+              <a href=" {{route('Category.destroy', $category->id)}}"  class="btn btn-xs btn-danger"> Deleting</a>
+
+              </td>
             </tr>
           @endforeach
       </tbody>
