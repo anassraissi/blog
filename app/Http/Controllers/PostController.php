@@ -57,7 +57,8 @@ class PostController extends Controller
                 'title' =>  $request->title,
                 'featured' => 'uploads/posts/'.$featured_new_name,
               'content' => $request->content, 
-             'category_id'=>$request->category_id
+             'category_id'=>$request->category_id,
+             'slug' => str_slug($request->title)
                ]);
 
                Session::flash("message","you create a post");
