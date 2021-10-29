@@ -27,6 +27,12 @@ class PostController extends Controller
      */
     public function create()
     {
+        $categories=Category::all();
+        if($categories->count()==0)
+        {
+        Session::flash("info","you may create atlist a category");
+
+        }
          return View('Posts.create_post',['categories' => Category::all()]);
     }
 

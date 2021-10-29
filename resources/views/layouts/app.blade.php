@@ -117,6 +117,9 @@
    @if(Session::has('message'))
    toastr.success("{{session::get('message')}}")
    @endif
+   @if(Session::has('info'))
+   toastr.info("{{session::get('info')}}")
+   @endif
     </script>
 </body>
 </html>
