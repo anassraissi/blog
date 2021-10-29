@@ -55,6 +55,10 @@ Route::group(['prefix'=>'admin' , 'middleware' =>'auth'] , function(){
         'uses' => 'CategoryController@destroy',
         'as' => 'Category.destroy'
     ]);
+    Route::get('/posts',[
+        'uses' => 'PostController@index',
+        'as' => 'posts'
+    ]);
     Route::get('/home', 'HomeController@index')->name('home');
 
 });
