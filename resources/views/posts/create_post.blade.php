@@ -14,8 +14,8 @@
             
           </div>
           <div class="form-group">
-              <label for="featured_image">featured</label>
-              <input type="file" name="featured_image" class="form-control">
+              <label for="featured">featured</label>
+              <input type="file" name="featured" class="form-control">
           </div>
           <div class="form-group">
               <label for="category_id">select a category</label>

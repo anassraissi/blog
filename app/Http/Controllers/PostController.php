@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use Illuminate\Http\UploadedFile;
+use App\Post;
+use Session;
 
 class PostController extends Controller
 {
@@ -37,11 +40,22 @@ class PostController extends Controller
     {
        $this->validate($request,[
               'title' => 'required',
-                'featured_image' => 'required|image',
+                'featured' => 'required|image',
               'content' => 'required',   
              'category_id'=>'required'       
        ]);
-       dd($request->all());
+               $featured=$request->featured;
+               $featured_new_name=time().$featured->getClientOriginalName();
+               $featured->move('uploads/posts',$featured_new_name);
+               $post=Post::create([
+                'title' =>  $request->title,
+                'featured' => 'uploads/posts/'.$featured_new_name,
+              'content' => $request->content, 
+             'category_id'=>$request->category_id
+               ]);
+
+               Session::flash("message","you create a post");
+               return redirect()->back();
     }
 
     /**
