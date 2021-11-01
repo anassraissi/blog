@@ -112,4 +112,10 @@ class PostController extends Controller
         Session::flash("message","you deleting a post");
         return redirect()->back();
     }
+    public function Trashed(){
+         $post=Post::onlyTrashed()->get();
+         return View('posts.trashed',['posts' => $post]);
+
+       
+    }
 }
