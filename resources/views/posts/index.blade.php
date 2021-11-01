@@ -25,7 +25,7 @@
               </td>
               <td>
                  {{$post->title}}
-              </td>
+              </td> 
               <td>
                  Edit
               </td>

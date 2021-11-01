@@ -67,6 +67,10 @@ Route::group(['prefix'=>'admin' , 'middleware' =>'auth'] , function(){
         'uses' => 'PostController@trashed',
         'as' => 'post.trashed'
     ]);
+    Route::get('/post/kill/{id}',[
+        'uses' => 'PostController@kill',
+        'as' => 'post.kill'
+    ]);
     Route::get('/home', 'HomeController@index')->name('home');
 
 });

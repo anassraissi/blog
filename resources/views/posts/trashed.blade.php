@@ -31,7 +31,7 @@
                  <a href=""class="btn btn-primary">Restore</a>
               </td>
               <td>
-               <a href="{{route('post.destroy',$post->id)}}" class="btn btn-danger">Delete</a>
+               <a href="{{route('post.kill',$post->id)}}" class="btn btn-danger">Delete</a>
               </td>
             </tr>
           @endforeach

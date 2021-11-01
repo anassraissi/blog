@@ -118,4 +118,11 @@ class PostController extends Controller
 
        
     }
+    public function kill($id){
+       $post=Post::withTrashed()->where('id',$id)->first();
+       $post->forceDelete();
+       Session::flash("message","you deleting a post permanently");
+       return redirect()->back();
+
+    }
 }
