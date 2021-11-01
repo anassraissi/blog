@@ -30,7 +30,7 @@
                  Edit
               </td>
               <td>
-                  delete
+               <a href="{{route('post.destroy',$post->id)}}" class="btn btn-danger">Trash</a>
               </td>
             </tr>
           @endforeach
