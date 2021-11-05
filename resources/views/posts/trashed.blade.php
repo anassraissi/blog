@@ -14,7 +14,7 @@
       restore
   </th>
   <th>
-      delete
+      Delete
   </th>
       </thead>
       <tbody>
@@ -28,7 +28,7 @@
               </td>
             
               <td>
-                 <a href=""class="btn btn-primary">Restore</a>
+                 <a href="{{route('post.restore',$post->id)}}"class="btn btn-primary">Restore</a>
               </td>
               <td>
                <a href="{{route('post.kill',$post->id)}}" class="btn btn-danger">Delete</a>
