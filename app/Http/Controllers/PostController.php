@@ -84,9 +84,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post=Post::find($id);
+       return View('posts.update_post',['post'=>$post])->with('categories', Category::all());
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -96,7 +96,26 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+     $this->validate($request,[
+         'title' => 'required',
+         'content' => 'required',
+         'category_id' => 'required',
+     ]);
+     $post=Post::find($id);
+     if($request->hasfile($post->featured)){
+        $featured=$request->featured;
+        $featured_new_name= time().$featured->getClientOrignialName();
+        $featured->move('uploads/posts',$featured_new_name);
+     }
+       $post->title= $request->title;
+       $post->content= $request->content;
+      
+       $post->category_id=$request->category_id;
+       $post->save();   
+
+         Session::flash("message","you update a post");
+         return redirect()->route('posts');
+
     }
 
     /**

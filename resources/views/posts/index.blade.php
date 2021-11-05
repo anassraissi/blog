@@ -11,10 +11,10 @@
        title
   </th>
   <th>
-      Deleting
+  Editing
   </th>
   <th>
-      Editing
+      delete
   </th>
       </thead>
       <tbody>
@@ -27,7 +27,7 @@
                  {{$post->title}}
               </td> 
               <td>
-                 Edit
+              <a href="{{route('post.edit',$post->id)}}" class="btn btn-primary">Edit</a>
               </td>
               <td>
                <a href="{{route('post.destroy',$post->id)}}" class="btn btn-danger">Trash</a>
