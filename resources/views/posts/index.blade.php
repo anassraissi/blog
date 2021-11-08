@@ -3,6 +3,8 @@
 <div class="card">
    
   <table class="table table-hover">
+  <tr >Posts Published</tr>
+
       <thead>
   <th>
      image
@@ -18,7 +20,8 @@
   </th>
       </thead>
       <tbody>
-          @foreach($posts as $post)
+         @if($posts->count()>0)
+         @foreach($posts as $post)
           <tr>
               <td>
                <img src="{{$post->featured}}" alt="{{$post->title}}" width="100px" height="50px">
@@ -34,6 +37,11 @@
               </td>
             </tr>
           @endforeach
+          @else
+          <tr>
+                    <th class="text-center"> No posts published </th>
+                  </tr>
+          @endif
       </tbody>
   </table>
   </div>
