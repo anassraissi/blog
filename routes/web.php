@@ -85,6 +85,31 @@ Route::group(['prefix'=>'admin' , 'middleware' =>'auth'] , function(){
     ]);
     Route::get('/home', 'HomeController@index')->name('home');
 
+    Route::Post('/tag/store',[
+        'uses' => 'TagController@store',
+        'as' => 'tag.store'
+    ]);
+    Route::get('/tag/create',[
+        'uses' => 'TagController@create',
+        'as' => 'tag.create'
+    ]);
+    Route::get('/tag/index',[
+        'uses' => 'TagController@index',
+        'as' => 'tag.index'
+    ]);
+    Route::get('/tag/edit/{id}',[
+        'uses' => 'TagController@edit',
+        'as' => 'tag.edit'
+    ]);
+    Route::post('/tag/update/{id}',[
+        'uses' => 'TagController@update',
+        'as' => 'tag.update'
+    ]);
+    Route::get('/tag/destroy/{id}',[
+        'uses' => 'TagController@destroy',
+        'as' => 'tag.destroy'
+    ]);
+
 });
 
 

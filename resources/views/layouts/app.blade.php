@@ -93,6 +93,12 @@
                        <a href="{{route('post.create')}}">create new Post</a> 
                       </li>
                       <li class="list-group-item">
+                       <a href="{{route('tag.create')}}">create new tag</a> 
+                      </li>
+                      <li class="list-group-item">
+                       <a href="{{route('tag.index')}}">Tags</a> 
+                      </li>
+                      <li class="list-group-item">
                        <a href="{{route('post.trashed')}}">Trashed Posts</a> 
                       </li>
                       </li>
